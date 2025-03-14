@@ -2,3 +2,5 @@ streamlit
 plotly
 pymongo
 python-dotenv
+openai
+Flask
