@@ -5,4 +5,4 @@ python-dotenv
 openai
 Flask
 python-docx
-pfdf
+fpdf
