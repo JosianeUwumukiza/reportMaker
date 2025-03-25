@@ -1,6 +1,6 @@
 # Report Assistant 📄📊
 
-[![Streamlit App](https://img.shields.io/badge/Streamlit-App-brightgreen)](https://report-assistant.streamlit.app/)
+[![Streamlit App](https://img.shields.io/badge/Streamlit-App-brightgreen)](https://report-maker-assistant.streamlit.app/)
 
 **Report Assistant** is an AI-powered application that helps users quickly generate detailed reports from bullet points. The application also provides a built-in feature for creating visualizations, allowing users to generate graphs from data tables to enhance their reports.
 
