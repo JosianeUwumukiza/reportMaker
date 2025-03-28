@@ -3,6 +3,6 @@ plotly
 pymongo
 python-dotenv
 openai
-Flask
+flask
 python-docx
 fpdf
