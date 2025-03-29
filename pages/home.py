@@ -8,11 +8,17 @@ import os
 from openai import OpenAI
 from streamlit_quill import st_quill
 import markdown2
+from dotenv import load_dotenv
+
 
 
 # --- Load API Key ---
-OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"] if "OPENAI_API_KEY" in st.secrets else os.getenv("OPENAI_API_KEY")
-client = OpenAI(api_key=OPENAI_API_KEY)
+load_dotenv()
+OpenAI_API_KEY = os.getenv("OPENAI_API_KEY")
+if not OpenAI_API_KEY:
+    st.warning("⚠️ OpenAI API Key is missing!")
+
+client = OpenAI(api_key=OpenAI_API_KEY)
 
 # --- Report Generator Function ---
 def generate_report(bullet_points: str) -> str:
@@ -29,17 +35,21 @@ def generate_report(bullet_points: str) -> str:
             return "Error: OpenAI API key not found."
     except Exception as e:
         return f"Error generating report: {str(e)}"
+ 
 #styling
-def local_css(file_name: str):
-    try:
-        with open(file_name) as f:
-            st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-    except FileNotFoundError:
-        pass
+#def local_css(file_name: str):
+ 
+ #   try:
+    #    with open(file_name) as f:
+   #         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+    #except FileNotFoundError:
+     #   pass **/
 
 # --- Main Page ---
 def main_page():
-    local_css("../style.css")
+    with open("pages/home.css") as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
 
     if "report_text" not in st.session_state:
         st.session_state.report_text = ""
