@@ -6,3 +6,5 @@ openai
 flask
 python-docx
 fpdf
+markdown2
+streamlit_quill
