@@ -39,7 +39,7 @@ def local_css(file_name: str):
 
 # --- Main Page ---
 def main_page():
-    local_css("./style.css")
+    local_css("../style.css")
 
     if "report_text" not in st.session_state:
         st.session_state.report_text = ""
