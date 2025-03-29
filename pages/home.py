@@ -56,7 +56,7 @@ def main_page():
     if "generated" not in st.session_state:
         st.session_state.generated = False
 
-    st.title(" AI Report Assistant +  Data Visualizer")
+    st.title(" AI Report Assistant")
 
     # --- Report Generation Section ---
     st.header(" Generate a Report from Bullet Points")
